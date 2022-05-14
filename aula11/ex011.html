@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country</title>
+</head>
+<body>
+    <h1>Country System</h1>
+    Type the country name you are living: <input type="text" name="txtc" id="txtc">
+    <input type="button" value="Verify" onclick="calcular()">
+<div id="res"></div>
+<script>
+    function calcular() {
+        let pais = document.getElementById('txtc')
+        let res = document.getElementById('res')
+        if(pais === 'Brazil') {
+            res.innerHTML = `<p>You are <strong>brazilian.</strong></p>`
+        } else {
+            res.innerHTML = `<p>You are foreign.</p>`
+        }
+    }
+</script>
+</body>
+</html>
