@@ -1,0 +1,36 @@
+import 'package:flutter/material.dart';
+
+void main() => runApp(MaterialApp(home: Home()));
+
+class Home extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        leading: const Icon(Icons.accessible_forward_sharp),
+        title: const Text(
+          'Secondary Page',
+          style: TextStyle(
+            color: Colors.white,
+          ),
+        ),
+      ),
+      body: const Center(
+          child: Text(
+        'Olá, mundo!!!',
+        style: TextStyle(
+          color: Colors.yellow,
+          fontWeight: FontWeight.bold,
+          fontSize: 32,
+        ),
+      )),
+      backgroundColor: Colors.blue[900],
+      floatingActionButton: const FloatingActionButton(
+        onPressed: null,
+        tooltip: 'Access time',
+        child: Icon(Icons.access_time_outlined),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.startDocked,
+    );
+  }
+}
