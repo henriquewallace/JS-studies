@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,6 +24,7 @@
         box-sizing: border-box;
     }
 </style>
+
 <body>
     <h1>1) Receba o ano de nascimento de uma pessoa, o ano atual e imprima:</h1>
     <div>
@@ -31,7 +33,7 @@
         <button onclick="actualAge()">OK</button>
         <ul>
             <li>A idade da pessoa no ano atual.</li>
-            <p id="respA" ></p>
+            <p id="respA"></p>
             <li>A idade que a pessoa terá em 2050.</li>
             <p id="respB"></p>
         </ul>
@@ -43,6 +45,20 @@
         <button onclick="salaryWith25()">OK</button>
         <p id="resp2"></p>
     </div>
+    <div>
+        <h1>3) Receba uma temperatura em Celsius, calcule e mostre essa temperatura em Fahrenheit.</h1>
+        <input class="input" type="text" id="temp" placeholder="Temperature in Celsius">
+        <button onclick="convertToFahrenheit()">OK</button>
+        <p id="resp3"></p>
+    </div>
+    <div>
+        <h1>4) Receba três notas, calcule e apresente a média aritmética das notas informadas.</h1>
+        <input class="input" type="text" id="grade1" placeholder="Grade 1">
+        <input class="input" type="text" id="grade2" placeholder="Grade 2">
+        <input class="input" type="text" id="grade3" placeholder="Grade 3">
+        <button onclick="arithmeticAverage()">OK</button>
+        <p id="resp4"></p>
+    </div>
 </body>
 
 <script>
@@ -50,16 +66,28 @@
         const birth = document.getElementById('birth').value;
         const actualYear = document.getElementById('actualYear').value;
         const actualAge = actualYear - birth;
-        const ageIn2050 = (2050 - actualAge ) + actualAge;
+        const ageIn2050 = (2050 - actualAge) + actualAge;
 
         document.getElementById('respA').innerHTML = `Idade no ano atual: ${actualAge}`;
         document.getElementById('respB').innerHTML = `Idade em 2050: ${ageIn2050}`;
     }
     function salaryWith25() {
-        const salary = document.getElementById('salary').value;
-        const newSalary = salary * 25 / 100;
+        const salary = parseInt(document.getElementById('salary').value);
+        const increase = salary * 0.25;
+        const newSalary = salary + increase;
 
         document.getElementById('resp2').innerHTML = `Salário com 25% de aumento: R$${newSalary}`;
+    }
+
+    function convertToFahrenheit() {
+        const tempCelsius = parseInt(document.getElementById('temp').value)
+        const tempFahrenheit = (tempCelsius * 1.8) + 32;
+
+        document.getElementById('resp3').innerHTML = `Temperatura em Fahrenheit: ${tempFahrenheit}`;
+    }
+
+    function arithmeticAverage() {
+        
     }
 </script>
 
