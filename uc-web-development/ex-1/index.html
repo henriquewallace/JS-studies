@@ -59,6 +59,26 @@
         <button onclick="arithmeticAverage()">OK</button>
         <p id="resp4"></p>
     </div>
+    <h1>5) Receba os valores dos dois catetos de um triângulo, calcule e apresente o valor da
+        hipotenusa.</h1>
+    <input class="input" type="text" id="leg1" placeholder="Cateto 1">
+    <input class="input" type="text" id="leg2" placeholder="Cateto 2">
+    <button onclick="calculateHypotenuse()">OK</button>
+    <p id="resp5"></p>
+    </div>
+    <div>
+        <h1>6) Receba o raio, calcule e apresente:</h1>
+        <input class="input" type="text" id="raio" placeholder="Raio">
+        <button onclick="calcWithRadio()">OK</button>
+        <ul>
+            <li>O comprimento de uma esfera: </li>
+            <p id="resp6A"></p>
+            <li>A área de uma esfera: </li>
+            <p id="resp6B"></p>
+            <li>O volume de uma esfera: </li>
+            <p id="resp6C"></p>
+        </ul>
+    </div>
 </body>
 
 <script>
@@ -87,8 +107,60 @@
     }
 
     function arithmeticAverage() {
-        
+        const grade1 = parseInt(document.getElementById('grade1').value);
+        const grade2 = parseInt(document.getElementById('grade2').value);
+        const grade3 = parseInt(document.getElementById('grade3').value);
+
+        const media = (grade1 + grade2 + grade3) / 3;
+        document.getElementById('resp4').innerHTML = `Média aritmética: ${media}`;
     }
+
+    function calculateHypotenuse() {
+        const leg1 = parseInt(document.getElementById('leg1').value);
+        const leg2 = parseInt(document.getElementById('leg2').value);
+        const hypotenuse = Math.sqrt(leg1 ** 2 + leg2 ** 2);
+
+        document.getElementById('resp5').innerHTML = `O valor da hipotenusa é: ${hypotenuse}`;
+    }
+
+    function calculateSphereCircumference() {
+        const raio = parseInt(document.getElementById('raio').value);
+
+        const comprimento = 2 * Math.PI * raio;
+
+        document.getElementById('resp6A').innerHTML = comprimento;
+    }
+
+    function calculateSphereArea() {
+        const raio = parseInt(document.getElementById('raio').value);
+        const area = 4 * Math.PI * Math.pow(raio, 2);
+
+        document.getElementById('resp6B').innerHTML = area;
+    }
+
+    function calculateSphereVolume() {
+        const raio = parseInt(document.getElementById('raio').value);
+        const volume = (4 / 3) * Math.PI * Math.pow(raio, 3);
+
+        document.getElementById('resp6C').innerHTML = volume;
+    }
+
+    function calcWithRadio() {
+        const raio = parseInt(document.getElementById('raio').value);
+        const comprimento = 2 * Math.PI * raio;
+
+        document.getElementById('resp6A').innerHTML = comprimento;
+
+        const area = 4 * Math.PI * Math.pow(raio, 2);
+
+        document.getElementById('resp6B').innerHTML = area;
+
+        const volume = (4 / 3) * Math.PI * Math.pow(raio, 3);
+
+        document.getElementById('resp6C').innerHTML = volume;
+    }
+
+
 </script>
 
 </html>
