@@ -43,6 +43,15 @@
         <button onclick="productPrice()">Retornar preço do produto</button>
         <div id="productPrice"></div>
     </div>
+    <div>
+        <h1>5) Valor bruto</h1>
+        <label for="employeeId">Insira o código do colaborador:</label>
+        <input type="number" id="employeeId" name="employeeId" required><br><br>
+        <label for="workedHours">Insira a quantidade de horas trabalhadas:</label>
+        <input type="number" id="workedHours" name="workedHours" required><br><br>
+        <button onclick="calcGrossSalary()">Valor a ser pago</button>
+        <div id="grossSalary"></div>
+    </div>
 
     <script>
         function calcMoneyChange() {
@@ -132,6 +141,36 @@
                 document.getElementById("productPrice").innerHTML = "R$ 97,35";
             } else {
                 document.getElementById("productPrice").innerHTML = "Produto não encontrado";
+            }
+        }
+
+        function calcGrossSalary() {
+            const employeeId = parseInt(document.getElementById("employeeId").value);
+            const workedHours = parseFloat(document.getElementById("workedHours").value);
+
+            const hourlyRates = {
+                1: 45.78,
+                2: 60.00,
+                3: 38.99,
+                4: 45.78,
+                5: 45.78,
+            };
+
+            switch (employeeId) {
+                case 1:
+                case 4:
+                case 5:
+                    document.getElementById("grossSalary").innerHTML = `Valor bruto a ser pago: R$ ${(workedHours * hourlyRates[employeeId]).toFixed(2)}`;
+                    break;
+                case 2:
+                    document.getElementById("grossSalary").innerHTML = `Valor bruto a ser pago: R$ ${(workedHours * hourlyRates[employeeId]).toFixed(2)}`;
+                    break;
+                case 3:
+                    document.getElementById("grossSalary").innerHTML = `Valor bruto a ser pago: R$ ${(workedHours * hourlyRates[employeeId]).toFixed(2)}`;
+                    break;
+                default:
+                    document.getElementById("grossSalary").innerHTML = "Funcionário não encontrado";
+                    break;
             }
         }
     </script>
