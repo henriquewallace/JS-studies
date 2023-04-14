@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 2</title>
+</head>
+
+<body>
+    <div>
+        <h1>1) Troco da Máquina</h1>
+        <p>Insira os valores abaixo:</p>
+        <label for="valor-compra">Valor da compra:</label>
+        <input type="number" id="valor-compra" name="valor-compra" required><br><br>
+        <label for="valor-pago">Valor pago:</label>
+        <input type="number" id="valor-pago" name="valor-pago" required><br><br>
+        <button onclick="calcMoneyChange()">Calcular Troco</button>
+        <div id="resultado"></div>
+    </div>
+    <div>
+        <h1>2) Cálculo IMC</h1>
+        <p>Insira os valores abaixo:</p>
+        <label for="weight">Peso (kg):</label>
+        <input type="number" id="weight" name="weight" required><br><br>
+        <label for="height">Altura (m):</label>
+        <input type="number" id="height" name="height" required><br><br>
+        <button onclick="calcIMC()">Calcular IMC</button>
+        <div id="result"></div>
+    </div>
+    <div>
+        <h1>3) Cálculo f(x)</h1>
+        <label for="x">Insira um valor qualquer:</label>
+        <input type="number" id="x" name="x" required><br><br>
+        <button onclick="calcF()">Calcular IMC</button>
+        <div id="result3"></div>
+    </div>
+    <div>
+        <h1>4) Preço do produto</h1>
+        <label for="productId">Insira o código do produto:</label>
+        <input type="number" id="productId" name="productId" required><br><br>
+        <button onclick="productPrice()">Retornar preço do produto</button>
+        <div id="productPrice"></div>
+    </div>
+
+    <script>
+        function calcMoneyChange() {
+            const purchaseValue = parseFloat(document.getElementById("valor-compra").value);
+            const paidValue = parseFloat(document.getElementById("valor-pago").value);
+
+            if (paidValue < purchaseValue) {
+                document.getElementById("resultado").innerHTML = "A quantia paga é insuficiente para realizar a compra!";
+            } else {
+                let moneyChange = paidValue - purchaseValue;
+                let notes = [50, 20, 10, 5, 2, 1];
+                let notesQuantity = [0, 0, 0, 0, 0, 0];
+
+                for (let i = 0; i < notes.length; i++) {
+                    while (moneyChange >= notes[i]) {
+                        moneyChange -= notes[i];
+                        notesQuantity[i]++;
+                    }
+                }
+
+                let result = "Troco: R$ " + (paidValue - purchaseValue).toFixed(2) + "<br>";
+                for (let i = 0; i < notes.length; i++) {
+                    if (notesQuantity[i] > 0) {
+                        result += "Notas de R$ " + notes[i] + ": " + notesQuantity[i] + "<br>";
+                    }
+                }
+                document.getElementById("resultado").innerHTML = result;
+            }
+        }
+
+        function calcIMC() {
+            const weight = parseFloat(document.getElementById("weight").value);
+            const height = parseFloat(document.getElementById("height").value);
+
+            const imc = weight / (height * height);
+            let result;
+
+            if (imc < 20) {
+                result = "Abaixo do peso";
+            } else if (imc >= 20 && imc < 25) {
+                result = "Normal";
+            } else if (imc >= 25 && imc < 30) {
+                result = "Sobrepeso";
+            } else if (imc >= 30 && imc < 35) {
+                result = "Obesidade grau 1";
+            } else if (imc >= 35 && imc < 40) {
+                result = "Obesidade grau 2";
+            } else if (imc >= 40) {
+                result = "Obesidade grau 3";
+            } else {
+                result = "Erro";
+            }
+            document.getElementById("result").innerHTML = result;
+        }
+
+        function calcF() {
+            const x = parseFloat(document.getElementById("x").value);
+
+            if (x < -2) {
+                document.getElementById("result3").innerHTML = 2 * x + 2;
+            } else if (-2 <= x && x < 3) {
+                document.getElementById("result3").innerHTML = 3;
+            } else {
+                document.getElementById("result3").innerHTML = -x;
+            }
+        }
+
+        function productPrice() {
+            const productType = {
+                sapato: 1,
+                bolsa: 2,
+                camisa: 3,
+                calca: 4,
+                blusa: 5,
+            };
+            const productId = document.getElementById("productId").value;
+
+            if (productId == productType.sapato) {
+                document.getElementById("productPrice").innerHTML = "R$ 99,99";
+            } else if (productId == productType.bolsa) {
+                document.getElementById("productPrice").innerHTML = "R$ 103,89";
+            } else if (productId == productType.camisa) {
+                document.getElementById("productPrice").innerHTML = "R$ 49,98";
+            } else if (productId == productType.calca) {
+                document.getElementById("productPrice").innerHTML = "R$ 89,72";
+            } else if (productId == productType.blusa) {
+                document.getElementById("productPrice").innerHTML = "R$ 97,35";
+            } else {
+                document.getElementById("productPrice").innerHTML = "Produto não encontrado";
+            }
+        }
+    </script>
+</body>
+
+</html>
