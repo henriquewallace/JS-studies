@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 2</title>
+</head>
+
+<body>
+    <div>
+        <h1>1) Troco da Máquina</h1>
+        <p>Insira os valores abaixo:</p>
+        <label for="valor-compra">Valor da compra:</label>
+        <input type="number" id="valor-compra" name="valor-compra" required><br><br>
+        <label for="valor-pago">Valor pago:</label>
+        <input type="number" id="valor-pago" name="valor-pago" required><br><br>
+        <button onclick="calcMoneyChange()">Calcular Troco</button>
+        <div id="resultado"></div>
+    </div>
+
+    <script>
+        function calcMoneyChange() {
+            const purchaseValue = parseFloat(document.getElementById("valor-compra").value);
+            const paidValue = parseFloat(document.getElementById("valor-pago").value);
+
+            if (paidValue < purchaseValue) {
+                document.getElementById("resultado").innerHTML = "A quantia paga é insuficiente para realizar a compra!";
+            } else {
+                let moneyChange = paidValue - purchaseValue;
+                let notes = [50, 20, 10, 5, 2, 1];
+                let notesQuantity = [0, 0, 0, 0, 0, 0];
+
+                for (let i = 0; i < notes.length; i++) {
+                    while (moneyChange >= notes[i]) {
+                        moneyChange -= notes[i];
+                        notesQuantity[i]++;
+                    }
+                }
+
+                let result = "Troco: R$ " + (paidValue - purchaseValue).toFixed(2) + "<br>";
+                for (let i = 0; i < notes.length; i++) {
+                    if (notesQuantity[i] > 0) {
+                        result += "Notas de R$ " + notes[i] + ": " + notesQuantity[i] + "<br>";
+                    }
+                }
+                document.getElementById("resultado").innerHTML = result;
+            }
+        }
+    </script>
+</body>
+
+</html>
