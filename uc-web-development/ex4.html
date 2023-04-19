@@ -1,0 +1,114 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+<style>
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  border: 1px solid black;
+  padding: 10px;
+  text-align: center;
+}
+
+tr:hover {
+  background-color: lightgray;
+}
+
+td:hover {
+  background-color: yellow;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+<h1>Tabela Interativa</h1>
+
+<table id="tabela">
+  <tr>
+    <th>Disciplina</th>
+    <th>Aluno</th>
+    <th>P1</th>
+    <th>P2</th>
+    <th>Total</th>
+  </tr>
+  <tr>
+    <td rowspan="5">Web</td> <!-- Aqui usamos o rowspan -->
+    <td>Ana</td>
+    <td>8.0</td>
+    <td>9.0</td>
+    <td>8.5</td>
+  </tr>
+  <tr>
+    <!-- Removemos a célula com o valor web -->
+    <td>Bruno</td>
+    <td>7.0</td>
+    <td>6.0</td>
+    <td>6.5</td>
+  </tr>
+  <tr>
+    <!-- Removemos a célula com o valor web -->
+    <td>Carla</td>
+    <td>10.0</td>
+    <td>10.0</td>
+    <td>10.0</td>
+  </tr>
+  <tr>
+    <!-- Removemos a célula com o valor web -->
+    <td>Daniel</td>
+    <td>5.0</td>
+    <td>4.0</td>
+    <td>4.5</td>
+  </tr>
+  <tr>
+    <!-- Removemos a célula com o valor web -->
+    <td>Eduardo</td>
+    <td>6.0</td>
+    <td>7.0</td>
+    <td>6.5</td>
+  </tr>
+
+  <!-- Copiamos e colamos as linhas da disciplina de Web e mudamos o valor da primeira célula para Lógica de Programação -->
+
+  <tr>
+    <td rowspan="5">Lógica de Programação</td> <!-- Aqui usamos o rowspan -->
+    <td>Ana</td>
+    <td>9.0</td> <!-- Alteramos os valores das notas -->
+    <td>8.0</td>
+    <td>8.5</td>
+  </tr>
+  <tr>
+    <!-- Removemos a célula com o valor Lógica de Programação -->
+    <td>Bruno</td>
+    <td>6.0</td> <!-- Alteramos os valores das notas -->
+    <td>7.0</td>
+    <td>6.5</td>
+  </tr>
+  <tr>
+    <!-- Removemos a célula com o valor Lógica de Programação -->
+    <td>Carla</td>
+    <td>10.0</td> <!-- Alteramos os valores das notas -->
+    <td>9.0</td>
+    <td>9.5</td>
+  </tr>
+  <tr>
+    <!-- Removemos a célula com o valor Lógica de Programação -->
+    <td>Daniel</td>
+    <td>4.0</td> <!-- Alteramos os valores das notas -->
+    <td>5.0</td>
+    <td>4.5</td>
+  </tr>
+  <tr>
+    <!-- Removemos a célula com o valor Lógica de Programação -->
+    <td>Eduardo</td>
+      <td>6.0</td>
+      <td>7.0</td>
+      <td>6.5</td>
+    </tr>
+</table>
