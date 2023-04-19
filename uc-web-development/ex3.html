@@ -41,6 +41,17 @@
         <label for="number-max">Maior Número:</label>
         <label id="max-number"></label><br><br>
     </div>
+    <div>
+        <h1>4) Equação Segundo Grau</h1>
+        <label for="coa">Insira o coeficiente 'a':</label>
+        <input type="number" id="coa" name="coa" required><br><br>
+        <label for="cob">Insira o coeficiente 'b':</label>
+        <input type="number" id="cob" name="cob" required><br><br>
+        <label for="coc">Insira o coeficiente 'c':</label>
+        <input type="number" id="coc" name="coc" required><br><br>
+        <button onclick="calcEquacao()">Calcular Equação de 2º grau</button><br><br>
+        <div id="res-eq"></div>
+    </div>
 
     <script>
         function calcMoneyChange() {
@@ -100,6 +111,31 @@
 
         function calcMaxNumber() {
             document.getElementById('max-number').innerHTML = Math.max(...numbersArrayToMax);
+        }
+
+        function calcEquacao() {
+            const coa = parseInt(document.getElementById("coa").value);
+            const cob = parseInt(document.getElementById("cob").value);
+            const coc = parseInt(document.getElementById("coc").value);
+            if (coa == 0 && cob == 0 && coc == 0) {
+                document.getElementById("res-eq").innerHTML = "Igualdade confirmada: 0 = 0";
+            } else if (coa == 0 && cob == 0 && coc != 0) {
+                document.getElementById("res-eq").innerHTML = "Coeficientes informados incorretamente";
+            } else if (coa == 0 && cob != 0) {
+                let x = -coc / cob;
+                document.getElementById("res-eq").innerHTML = "Esta é uma equação de primeiro grau, x = " + x.toFixed(2);
+            } else if (Math.pow(cob, 2) - 4 * coa * coc < 0) {
+                document.getElementById("res-eq").innerHTML = "Esta é uma equação de segundo grau. Esta equação não possui raízes reais (delta < 0): delta = " + (Math.pow(cob, 2) - 4 * coa * coc);
+            } else if (Math.pow(cob, 2) - 4 * coa * coc == 0) {
+                let x = -cob / (2 * coa);
+                document.getElementById("res-eq").innerHTML = "“Esta é uma equação de segundo grau. Esta equação possui duas raízes reais iguais: x1 = x2 = " + x.toFixed(2);
+            } else {
+                let delta = Math.pow(cob, 2) - 4 * coa * coc;
+                let x1 = (-cob + Math.sqrt(delta)) / (2 * coa);
+                let x2 = (-cob - Math.sqrt(delta)) / (2 * coa);
+
+                document.getElementById("res-eq").innerHTML = `Esta é uma equação de segundo grau. Esta equação possui duas raízes reais diferentes: delta = ${delta}, x1 = ${x1.toFixed(2)} and x2 = ${x2.toFixed(2)}`;
+            }
         }
     </script>
 </body>
