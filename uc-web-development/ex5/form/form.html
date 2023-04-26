@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html class="h-full bg-white" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                screens: {
+                    'xs': '475px',
+                    'sm': '640px',
+                    'md': '768px',
+                    'lg': '1024px',
+                    'xl': '1280px',
+                    '2xl': '1536px',
+                },
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                    }
+                }
+            }
+        }
+        module.exports = {
+            plugins: [
+                require('@tailwindcss/forms'),
+            ],
+        }
+    </script>
+</head>
+
+<body class="h-full">
+   
+    <div class="flex flex-col justify-center px-6 lg:px-8">
+        <div class="sm:mx-auto sm:w-full sm:max-w-sm">
+            <h2 class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Formulário
+            </h2>
+        </div>
+
+        <div class="mt-4 sm:mx-auto sm:w-full sm:max-w-sm">
+            <form class="space-y-3" id="login-form" method="POST">
+                <div>
+                    <label for="login" class="block text-sm font-medium leading-6 text-gray-900">Login</label>
+                    <div class="mt-2">
+                        <input id="login" name="login" type="login" autocomplete="login" required
+                            class="block w-full rounded-md border-0 py-1.5 px-4 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                    </div>
+                </div>
+
+                <div>
+                    <label for="email" class="block text-sm font-medium leading-6 text-gray-900">E-mail</label>
+                    <div class="mt-2">
+                        <input id="email" name="email" type="email" autocomplete="email" required
+                            class="block w-full rounded-md border-0 py-1.5 px-4 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                    </div>
+                </div>
+
+                <div>
+                    <label for="birth" class="block text-sm font-medium leading-6 text-gray-900">Data de nascimento</label>
+                    <div class="mt-2">
+                        <input id="birth" name="birth" type="date" autocomplete="birth" required
+                            class="block w-full rounded-md border-0 py-1.5 px-4 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                    </div>
+                </div>
+
+                <div>
+                    <div class="flex items-center justify-between">
+                        <label for="password" class="block text-sm font-medium leading-6 text-gray-900">Senha</label>
+
+                    </div>
+                    <div class="mt-2">
+                        <input id="password" name="password" type="password" autocomplete="current-password" required
+                            class="block w-full rounded-md border-0 py-1.5 px-4 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                    </div>
+                </div>
+
+                <div>
+                    <div class="flex items-center justify-between">
+                        <label for="confpassword" class="block text-sm font-medium leading-6 text-gray-900">Confirmar senha</label>
+
+                    </div>
+                    <div class="mt-2">
+                        <input id="confPassword" name="confPassword" type="password" autocomplete="current-password" required
+                            class="block w-full rounded-md border-0 py-1.5 px-4 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                    </div>
+                </div>
+
+                <div>
+                    <label for="city" class="block text-sm font-medium leading-6 text-gray-900">Cidade</label>
+                    <div class="mt-2">
+                        <input id="city" name="city" type="city" autocomplete="city" required
+                            class="block w-full rounded-md border-0 py-1.5 px-4 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                    </div>
+                </div>
+
+                <div>
+                    <label id="listbox-label" class="block text-sm font-medium leading-6 text-gray-900">Sexo</label>
+                  
+                      <select id="sex" name="city" type="city" autocomplete="city" required  class="relative w-full mt-2 h-9 cursor-default rounded-md bg-white py-1.5 pl-2 pr-10 text-left text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 sm:text-sm sm:leading-6" aria-haspopup="listbox" aria-expanded="true" aria-labelledby="listbox-label" name="Sexo" id="listbox-label">
+                        <option value="masculino">Masculino</option>
+                        <option value="feminino">Feminino</option>
+                      </select>   
+                    </div>              
+                <div>
+                    <label for="homepage" class="block text-sm font-medium leading-6 text-gray-900">Home-Page</label>
+                    <div class="mt-2">
+                        <input id="homepage" name="homepage" type="homepage" autocomplete="homepage" value="http.//" required
+                            class="block w-full rounded-md border-0 py-1.5 px-4 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                    </div>
+                </div>
+                <div>
+                    <label for="interesses" class="block text-sm font-medium leading-6 text-gray-900">Interesses</label>
+                    <div class="mt-2">
+                        <input id="homepage" name="homepage" type="checkbox" autocomplete="homepage" value="http.//" required
+                            class="">
+                        <input id="homepage" name="homepage" type="homepage" autocomplete="homepage" value="http.//" required
+                            class="block w-full rounded-md border-0 py-1.5 px-4 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                        <input id="homepage" name="homepage" type="homepage" autocomplete="homepage" value="http.//" required
+                            class="block w-full rounded-md border-0 py-1.5 px-4 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                    </div>
+                </div>
+
+                <div>
+                    <input type="submit" value="Cadastrar"
+                        class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"></input>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+        function validateLogin(form) {
+            const email = form.email.value;
+            const password = form.password.value;
+            const confPassword = form.confPassword.value;
+
+            if (password === confPassword) {
+                window.location.href = "resume.html";
+            } else {
+                alert("As senhas não são iguais");
+            }
+        }
+
+        function init() {
+            // Obter uma referência ao elemento do formulário
+            var loginForm = document.getElementById("login-form");
+            // Adicionar um evento de submit ao formulário
+            loginForm.onsubmit = function (event) {
+                // Chamar a função validateLogin passando o formulário como argumento
+                validateLogin(this);
+                // Evitar o comportamento padrão do evento de submit
+                event.preventDefault();
+            };
+        }
+        // Executar a função init quando a página carregar
+        window.onload = init;
+    </script>
+</body>
+
+</html>
