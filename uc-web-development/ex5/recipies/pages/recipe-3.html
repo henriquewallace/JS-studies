@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site de Receitas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                screens: {
+                    'xs': '475px',
+                    'sm': '640px',
+                    'md': '768px',
+                    'lg': '1024px',
+                    'xl': '1280px',
+                    '2xl': '1536px',
+                },
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                    }
+                }
+            }
+        }
+        module.exports = {
+            plugins: [
+                require('@tailwindcss/aspect-ratio'),
+            ],
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <nav class="bg-gray-800">
+            <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+                <div class="relative flex h-16 items-center justify-between">
+                    <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+                        <button type="button"
+                            class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+                            aria-controls="mobile-menu" aria-expanded="false">
+                            <span class="sr-only">Open main menu</span>
+
+                            <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                            </svg>
+
+                            <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+
+                        <div class="hidden sm:ml-6 sm:block">
+                            <div class="flex space-x-4">
+                                <a href="home.html"
+                                    class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium"
+                                    aria-current="page">Home</a>
+                                <a href="recipe-1.html"
+                                    class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Bolo
+                                    de Cenoura</a>
+                                <a href="recipe-2.html"
+                                    class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Purê
+                                    de Batata</a>
+                                <a href=""
+                                    class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Lasanha</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sm:hidden" id="mobile-menu">
+                <div class="space-y-1 px-2 pb-3 pt-2">
+                    <a href="home.html" class="bg-gray-900 text-white block rounded-md px-3 py-2 text-base font-medium"
+                        aria-current="page">Home</a>
+                    <a href="recipe-1.html"
+                        class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Bolo
+                        de Cenoura</a>
+                    <a href="recipe-2.html"
+                        class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Purê
+                        de Batata</a>
+                    <a href=""
+                        class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Lasanha</a>
+                </div>
+            </div>
+        </nav>
+
+    </header>
+    <content class="justify-center flex flex-col mb-8">
+        <h1 class="flex justify-center text-3xl font-bold tracking-tight text-gray-900 mt-6 mb-10">Lasanha</h1>
+        <div class="flex gap-8  items-center justify-center mx-8">
+            <div class="flex flex-col gap-8 w-[60%]">
+                <div>
+                    <h3 class="text-2xl font-bold tracking-tight text-gray-900 ">Ingredientes</h3>
+                    <ul class="list-disc pl-8 pt-4">
+                        <li>500g de massa de lasanha pré-cozida</li>
+                        <li>500g de carne moída</li>
+                        <li> cebola picada</li>
+                        <li>2 dentes de alho picados</li>
+                        <li>2 latas de molho de tomate</li>
+                        <li>1 xícara de água</li>
+                        <li>Sal e pimenta-do-reino a gosto</li>
+                        <li>2 xícaras de queijo muçarela ralado</li>
+                        <li>/2 xícara de queijo parmesão ralado
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold tracking-tight text-gray-900">Modo de Preparo</h3>
+                    <ol class="list-decimal pl-8 pt-4">
+                        <li>Em uma panela grande, refogue a cebola e o alho até que fiquem dourados.</li>
+                        <li>Adicione a carne moída e cozinhe até que ela fique bem dourada.</li>
+                        <li>Adicione o molho de tomate, a água e tempere com sal e pimenta-do-reino a gosto. Deixe
+                            cozinhar por cerca de 15 minutos em fogo baixo, mexendo ocasionalmente.</li>
+                        <li>Preaqueça o forno a 180°C.</li>
+                        <li>Em uma forma grande, faça camadas de massa de lasanha, molho de carne e queijo muçarela, até
+                            que todos os ingredientes sejam usados. Finalize com uma camada de queijo parmesão.</li>
+                        <li>Leve ao forno por cerca de 30-35 minutos ou até que a lasanha esteja bem quente e o queijo
+                            derretido e dourado.</li>
+                        <li>Retire do forno, deixe esfriar por alguns minutos e sirva.</li>
+                    </ol>
+                </div>
+            </div>
+            <div>
+                <img class="rounded-lg w-full h-[250px] xs:w-[500px] xs:h-[500px]" src="../images/lasanha.jpg" alt="">
+            </div>
+        </div>
+
+    </content>
+</body>
+
+</html>
