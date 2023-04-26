@@ -35,7 +35,7 @@
 
 <body class="h-full">
    
-    <div class="flex flex-col justify-center px-6 lg:px-8">
+    <div class="flex flex-col justify-center px-6 lg:px-8 pb-8">
         <div class="sm:mx-auto sm:w-full sm:max-w-sm">
             <h2 class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Formulário
             </h2>
@@ -114,17 +114,16 @@
                 </div>
                 <div>
                     <label for="interesses" class="block text-sm font-medium leading-6 text-gray-900">Interesses</label>
-                    <div class="mt-2">
-                        <input id="homepage" name="homepage" type="checkbox" autocomplete="homepage" value="http.//" required
-                            class="">
-                        <input id="homepage" name="homepage" type="homepage" autocomplete="homepage" value="http.//" required
-                            class="block w-full rounded-md border-0 py-1.5 px-4 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-                        <input id="homepage" name="homepage" type="homepage" autocomplete="homepage" value="http.//" required
-                            class="block w-full rounded-md border-0 py-1.5 px-4 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                    <div class="mt-2 flex gap-4">
+                        <input id="musica" name="musica" type="checkbox" autocomplete="musica" required>Musica</input>
+                        <input id="esporte" name="esporte" type="checkbox" autocomplete="esporte" required>Esporte</input>
+                        <input id="moda" name="moda" type="checkbox" autocomplete="moda" required>Moda</input>
                     </div>
                 </div>
 
-                <div>
+                <div class="flex gap-4">
+                    <input type="reset" value="Limpar"
+                        class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"></input>
                     <input type="submit" value="Cadastrar"
                         class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"></input>
                 </div>
@@ -138,10 +137,13 @@
             const confPassword = form.confPassword.value;
 
             if (password === confPassword) {
-                window.location.href = "resume.html";
+                alert("Cadastro realizado");
             } else {
                 alert("As senhas não são iguais");
             }
+        }
+        function resetLogin(form) {
+            form.reset();
         }
 
         function init() {
@@ -151,6 +153,12 @@
             loginForm.onsubmit = function (event) {
                 // Chamar a função validateLogin passando o formulário como argumento
                 validateLogin(this);
+                // Evitar o comportamento padrão do evento de submit
+                event.preventDefault();
+            };
+            loginForm.oncancel = function (event) {
+                // Chamar a função validateLogin passando o formulário como argumento
+                resetLogin(this);
                 // Evitar o comportamento padrão do evento de submit
                 event.preventDefault();
             };
