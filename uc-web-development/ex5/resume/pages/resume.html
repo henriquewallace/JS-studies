@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currículo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                screens: {
+                    'xs': '475px',
+                    'sm': '640px',
+                    'md': '768px',
+                    'lg': '1024px',
+                    'xl': '1280px',
+                    '2xl': '1536px',
+                },
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                    }
+                }
+            }
+        }
+        module.exports = {
+            plugins: [
+                require('@tailwindcss/forms'),
+            ],
+        }
+    </script>
+</head>
+
+<body>
+    <div class="m-8">
+        <div class="px-4 sm:px-0 flex flex-col gap-8">
+            <h3 class="text-base font-semibold leading-7 text-gray-900">Currículo Profissional</h3>
+            <img class="rounded-lg w-[100px] h-[100px]" src="../profile.jpeg"></img>
+        </div>
+        <div class="mt-6 border-t border-gray-100">
+            <dl class="divide-y divide-gray-100">
+                <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                    <dt class="text-sm font-medium leading-6 text-gray-900">Nome completo</dt>
+                    <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">Henrique Wallace F. P.</dd>
+                </div>
+                <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                    <dt class="text-sm font-medium leading-6 text-gray-900">Data de nascimento</dt>
+                    <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">20/03/2001</dd>
+                </div>
+                <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                    <dt class="text-sm font-medium leading-6 text-gray-900">E-mail</dt>
+                    <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">henrique.test@example.com
+                    </dd>
+                </div>
+                <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                    <dt class="text-sm font-medium leading-6 text-gray-900">Profissão</dt>
+                    <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">Front-end Developer</dd>
+                </div>
+                <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                    <dt class="text-sm font-medium leading-6 text-gray-900">Formação acadêmica</dt>
+                    <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
+                        <ul class="list-disc pl-4">
+                            <li>Ensino Superior em Sistemas de Informação – Conclusão prevista para 2024<br>
+                                Centro Universitário Una – UNA
+                            </li>
+                            <li>Técnico em Mecânica Industrial – Concluído em 2019 <br>
+                                Centro Federal de Educação Tecnológica de Minas Gerais – CEFETMG
+                            </li>
+                        </ul>
+                    </dd>
+                </div>
+                <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                    <dt class="text-sm font-medium leading-6 text-gray-900">Experiência profissional</dt>
+                    <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
+                        <ul class="list-disc pl-4">
+                            <li>Engenheiro de Software Júnior – 02/2023 até o momento</li>
+                            <li>Estagiário em Desenvolvimento de Software – 04/2022 a 01/2023</li>
+                            <li>Projetista II – 01/2021 a 04/2022</li>
+
+                        </ul>
+                    </dd>
+                </div>
+            </dl>
+        </div>
+    </div>
+
+</body>
+
+</html>
